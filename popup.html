@@ -1,30 +1,64 @@
-
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Virtusize HAR Viewer</title>
     <style>
-        body { font-family: Arial; margin: 10px; }
-        input { margin-bottom: 10px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-        th { background-color: #f4f4f4; }
+      body {
+        font-family: Arial;
+        margin: 10px;
+      }
+      input,
+      select {
+        margin-bottom: 10px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f4f4f4;
+        cursor: pointer;
+      }
+      th:nth-child(1),
+      td:nth-child(1) {
+        width: 220px; /* or adjust to your preferred width */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h2>Virtusize HAR Viewer</h2>
     <input type="file" id="harFile" accept=".har" />
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter">
+      <option value="">All</option>
+      <option value="API">API</option>
+      <option value="KPI">KPI</option>
+      <option value="Required">Required</option>
+    </select>
+
     <table id="resultsTable">
-        <thead>
-            <tr>
-                <th>name</th>
-                <th>source</th>
-                <th>storeId</th>
-                <th>timestamp</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>source</th>
+          <th>statusCode</th>
+          <th>timestamp</th>
+          <th>status</th>
+          <th>category</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
     <script src="popup.js"></script>
-</body>
+  </body>
 </html>
