@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtusize HAR Viewer</title>
+    <style>
+        body { font-family: Arial; margin: 10px; }
+        input { margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h2>Virtusize HAR Viewer</h2>
+    <input type="file" id="harFile" accept=".har" />
+    <table id="resultsTable">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>source</th>
+                <th>storeId</th>
+                <th>timestamp</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="popup.js"></script>
+</body>
+</html>
